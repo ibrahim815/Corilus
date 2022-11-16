@@ -1,0 +1,9 @@
+<td>
+    <div *ngIf="data !== null" class="card-class" [ngClass]="{'flipped': flipped}" (click)="toggleFlip()">
+        <div class="face front">
+            <p>{{data.name}}</p>
+            <img src="{{data.img}}" alt={{data.name}} class="img">
+        </div>
+       
+    </div>      
+</td>

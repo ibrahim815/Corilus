@@ -1,0 +1,50 @@
+.time{
+    margin-top: -60%;
+    margin-left: -20%;
+}
+.h1{
+    font-size: 30px;
+    margin-left: 75px;
+    text-shadow: -1px -1px #9df, 1px 1px #49d, -3px 0 4px #000;
+    font-family: Helvetica;
+    color: rgb(0, 0, 0);
+    padding: 32px 32px 32px 32px;
+    display: inline;
+    line-height: 0px;
+}
+
+.h2{
+    font-size: 20px;
+    font-family:Helvetica;
+    text-align: center;
+    margin-top: 8%;
+    
+}
+.button {
+    width: 90px;
+    height: 40px;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgb(207, 194, 11);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.button:hover {
+    background-color: rgb(148, 148, 148);
+}
+
+.button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}

@@ -1,0 +1,63 @@
+
+                <div class="card">
+                  <div class="header">
+                   <!--  <p class="category">Gestion  des Salles de réunions</p> -->
+                  </div>
+
+                  <div class="content">
+                    <div class="container ">
+                      <div class="row">
+                        <div class="col-md-12 card">
+                          <div class="header">
+                            <h4 class="title">Modifier une salle</h4>
+                          </div>
+                          <div class="content">
+                            <form>
+
+                              <div class="row g-3">
+                                <div class="col-sm">
+                                  <input type="text" class="form-control" placeholder="Nom salle" aria-label="nomSalle" [(ngModel)]="est.rName" name="nomSalle">
+                                </div>
+                              </div>
+                              <div class="row g-4">
+                                <div class="col-sm">
+                                  <mat-select class="form-control"[(ngModel)]="est.suite" name="suite" placeholder="Suite" aria-label="suite">
+                                    <mat-option value="Fibonacci">Fibonacci</mat-option>
+                                    <mat-option value="T-shirt">T-shirt </mat-option>
+                                    <mat-option value="Scrum">Scrum</mat-option>
+                                  </mat-select>
+                                </div>
+                              </div>
+<!--                                 <div class="row g-4">
+                                <div class="col-sm">
+                                  <mat-select class="form-control"[(ngModel)]="est.membres" name="membres" placeholder="Membres" aria-label="membres">
+                                    <mat-option value="user1">user1</mat-option>
+                                    <mat-option value="user2">user2</mat-option>
+                                    <mat-option value="user3">user3</mat-option>
+                                  </mat-select>
+                                </div>
+                              </div> -->
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <button type="reset" (click)="onCancel()"
+                                    class="btn btn-secondary btn-fill float-right">Annuler</button>
+                                  <button type="submit" class="btn btn-info btn-fill float-right" (click)="updateRoom()">Modifier</button>
+
+
+                                </div>
+                              </div>
+                              <div class="clearfix"></div>
+                              <br>
+                            </form>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+          </div>
+       
+

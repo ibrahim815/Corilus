@@ -1,0 +1,52 @@
+
+<div class="back-color">
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid row">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="col align-self-end">
+                  <a class="navbar-brand" href="#">Planning Poker</a>
+              </div>
+              <div class="col align-self-center align-item-navbar">
+                  <ul class="navbar-nav">
+                      <li>
+                          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#entrarSessao" href="">Copier Lien<i class="bi bi-link-45deg"></i></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <div id="entrarSessao" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">entrer salle <i class="bi bi-file-ppt"></i></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form [formGroup]="formEntrarSessao" (ngSubmit)="entrarSessao()">
+              <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Nom</label>
+                    <input formControlName="nomeUsuario" type="text" class="form-control" id="recipient-name">
+                  </div>
+                  <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">ID salle</label>
+                      <input formControlName="idSala" type="text" class="form-control" id="recipient-name">
+                  </div>
+                  <div class="mb-3">
+                      <div class="form-check form-switch">
+                          <input formControlName="espectador" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                          <label class="form-check-label" for="flexSwitchCheckDefault">spectateur?</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="submit" class="btn btn-secondary button-border" data-bs-dismiss="modal">Annuler</button>
+                  <button [disabled]="!formEntrarSessao.valid" type="submit" class="btn btn-primary button-border" data-bs-dismiss="modal">Entrer salle</button>
+              </div>
+          </form>
+        </div>
+      </div>
+  </div>
+</div>

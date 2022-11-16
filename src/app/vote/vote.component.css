@@ -1,0 +1,77 @@
+.container-game{
+  height: 16rem;
+  margin-top: 2rem;
+}
+
+.card-poker{
+  width: 5rem;
+  height: 100px;
+  border-radius: 10px;
+  border-color: #5492e082;
+}
+
+.card-empty{
+  width: 5rem;
+  height: 100px;
+  border-radius: 10px;
+  border-style: dashed;
+  border-color: #5492e082;
+  background-color: #0000000d;
+  border: none;
+}
+
+.card-vote{
+  width: 5rem;
+  height: 100px;
+  border-radius: 10px;
+  border-style: dashed;
+  border-color: #5492e082;
+  background-color: #0000000d;
+}
+
+.align-item-navbar{
+  margin-left: 700px;
+}
+
+.row>* {
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
+
+.selected-card-margin{
+  margin: 5px;
+}
+.align-bottom-bar{
+  margin: 0% 0% 0% 37%;
+}
+
+.padding-item{
+  padding: 5px;
+}
+
+.active {
+  top: -15px!important;
+  box-shadow:
+              1px 1px #a5c8e5,
+              2px 2px #a5c8e5,
+              3px 3px #a5c8e5;
+      -webkit-transform: translateX(-3px);
+      transform: translateX(-3px);
+}
+
+.div-votacao{
+  text-align: center;
+  margin: 0 auto;
+  width: 18%;
+  height: 60%;
+  border-radius: 1%;
+}
+
+#card-effect{
+  position:relative;
+  top:0;
+  padding:4px;
+  transition: all .2s ease-in-out}
+#card-effect:hover{
+  top: -10px;
+}

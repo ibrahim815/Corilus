@@ -1,0 +1,75 @@
+<div class="card">
+    <div class="header">
+     <!--  <p class="category">Gestion  des Salles de réunions</p> -->
+    </div>
+
+    <div class="content">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-12 card">
+            <div class="header">
+              <h4 class="title">Inviter des membres</h4>
+            </div>
+            <div class="content">
+                <button  title="Ajouter une salle"
+                class="btn btn-info btn-fill bi bi-plus"  (click)="addMember()" ></button>
+                <br>
+    <form [formGroup]="inviterForm" (ngSubmit)="onSubmit()">
+        <!-- <button type="button" (click)="addMember()" class="btn btn-primary">Add More</button> -->
+      <table class="table table-bordered" formArrayName="members">
+        <tr *ngFor="let member of members().controls; let i=index" [formGroupName]="i">
+          <td>
+              Username :
+              <!-- <input matInput placeholder="Name" formControlName="username" [formControl]="nameFormControl" /> -->
+              <mat-error *ngIf="nameFormControl.hasError('minlength')">
+                Name must be at least 4 characters long.
+              </mat-error>
+              <mat-error *ngIf="nameFormControl.hasError('required')">
+                Name is <strong>required</strong>
+              </mat-error>
+              <input type="text" placeholder="Username" [formControl]="nameFormControl"  class="form-control">
+             <!-- <input type="text" matInput placeholder="Name"   [formControl]="nameFormControl"  /> -->
+          </td>
+          <td>
+              Email :
+              <!-- <input type="text" formControlName="email" class="form-control">   -->
+
+              <mat-error *ngIf="emailFormControl.hasError('email')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+              <input type="text" placeholder="Email" [formControl]="emailFormControl"class="form-control">
+          </td>
+          <td>
+            <button  type="button" rel="tooltip" title="Supprimer" class="btn btn-info btn-simple " (click)="removeMember(i)"  >
+                <i class="bi bi-trash"></i>
+              </button>
+             <!--  <button (click)="removeMember(i)" class="btn btn-danger">Remove</button>   -->
+          </td>
+        </tr>
+      </table>
+      <div class="row">
+        <div class="col-lg-12">
+          <button type="reset" (click)="onCancel()"
+            class="btn btn-secondary btn-fill float-right">Annuler</button>
+          <button type="submit" class="btn btn-info btn-fill float-right" (click)="register()">Inviter</button>
+
+
+        </div>
+      </div>
+
+    </form>
+
+    <br/>
+   <!--  {{this.inviterForm.value | json}}   -->
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</div>

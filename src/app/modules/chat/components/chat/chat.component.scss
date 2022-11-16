@@ -1,0 +1,49 @@
+.chat {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  max-height: 100%;
+  background-color: #262c42;
+  border: 1px solid;
+
+  .chat-header {
+    padding: 0.5rem;
+    min-height: 1.5rem;
+    background-color: lavender;
+  }
+
+  .conversation {
+    flex: 1;
+    overflow-y: auto;
+    .message {
+      padding: 0.5rem;
+      background-color: white;
+      color: black;
+      margin: 0.5rem;
+      border-radius: 0.5rem;
+    }
+
+    .my-message {
+      margin-left: 2rem;
+      background-color: antiquewhite;
+    }
+
+    .cor-message {
+      margin-right: 2rem;
+    }
+  }
+}
+
+@media (min-width: 720px) {
+  .chat {
+    position: static;
+    height: 100vh;
+    max-height: 100%;
+  }
+}

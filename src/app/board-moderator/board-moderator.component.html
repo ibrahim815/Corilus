@@ -1,0 +1,36 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer class="sidenav"  mode="side" opened="true">
+     <img src="assets/img/materiel/side-image.svg" >
+      <mat-nav-list class="nav-list">
+         <a mat-list-item routerLink="homeUser">
+            <i class="material-icons">home</i>
+            Home
+         </a>
+         <a mat-list-item routerLink="profile">
+           <i class="material-icons">person</i>
+           Profile
+        </a>
+        
+         <a mat-list-item routerLink="ticketTech">
+            <i class="material-icons">support</i>
+            Ticket de panne
+         </a>
+        
+         <a mat-list-item >
+            <i class="material-icons" >logout</i>
+            <a  (click)="logout()">Déconnexion</a>
+           </a>
+      </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+     <div class="sidenav-content">
+      <div class="container">
+         <h4 class="mat-elevation-z8">Espace Technicien</h4>
+      </div>         
+      <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
+            <mat-icon>menu</mat-icon>
+         </button>
+         <router-outlet></router-outlet>
+      </div>
+  </mat-drawer-content>
+</mat-drawer-container>

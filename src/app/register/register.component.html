@@ -1,0 +1,201 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<br>
+<div class="wrapper">
+  <div class="page-header clear-filter" filter-color="orange">
+    <div class="page-header-image rellax-header" data-rellax-speed="-7">
+
+    </div>
+    <div class="container">
+      
+      <div class="content-center brand">
+
+        <div class="section section-tabs">
+          <div class="container">
+            
+            <div class="row">
+              <div class="col-md-10 ml-auto col-xl-6 mr-auto">
+                <div class="card card-form">
+                  <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                      
+                      <h3 class="text-center title form-title">S'inscrire</h3>
+
+                        <form
+                          *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+                          novalidate
+                        >
+                        
+
+                          <div class="row g-3">
+                            <div class="col-sm  ">
+                              <label for="username ">
+                                Username</label>
+                            <input
+                              type="text" 
+                              class="form-control "
+                              name="username"
+                              [(ngModel)]="form.username"
+                              required
+                              minlength="3"
+                              maxlength="20"
+                              #username="ngModel" placeholder="Username"
+                              style="border: 1px solid #4CAF50"
+                            />
+                            </div>
+                            <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                              <div *ngIf="username.errors['required']">Username is required</div>
+                              <div *ngIf="username.errors['minlength']">
+                                Username must be at least 3 characters
+                              </div>
+                              <div *ngIf="username.errors['maxlength']">
+                                Username must be at most 20 characters
+                              </div>
+                            </div>
+                            <div class="col-sm">
+
+                            <label for="email">Email</label>
+                            
+                            <input
+                              type="email"
+                              class="form-control"
+                              name="email"
+                              [(ngModel)]="form.email"
+                              required
+                              email
+                              #email="ngModel" placeholder="Email"
+                              style="border: 1px solid #4CAF50"
+                              />
+                            </div>
+                          <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                            <div *ngIf="email.errors['required']">Email is required</div>
+                            <div *ngIf="email.errors['email']">
+                              Email must be a valid email address
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row g-3">
+                        <div class="col-sm  ">
+                          <div class="form-group">
+                            <label for="password">Password</label>
+                            <input
+                              type="password"
+                              class="form-control"
+                              name="password"
+                              [(ngModel)]="form.password"
+                              required
+                              minlength="6"
+                              #password="ngModel" placeholder="Password"
+                              style="border: 1px solid #4CAF50"
+                            />
+                            <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                              <div *ngIf="password.errors['required']">Password is required</div>
+                              <div *ngIf="password.errors['minlength']">
+                                Password must be at least 6 characters
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-sm  ">
+                        <div class="form-group">
+                          <label for="password">Password</label>
+                          <input
+                            type="password"
+                            class="form-control"
+                            name="password"
+                            [(ngModel)]="form.password"
+                            required
+                            minlength="6"
+                            #password="ngModel" placeholder="Confirm password"
+                            style="border: 1px solid #4CAF50"
+                          />
+                          <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                            <div *ngIf="password.errors['required']">Password is required</div>
+                            <div *ngIf="password.errors['minlength']">
+                              Password must be at least 6 characters
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    </div>
+<!--                       <div class="row g-3">
+                        <div class="col-sm">
+                      <div class="form-group">
+                          <input type="text" name="service" class="form-control" placeholder="Service"  [(ngModel)]="form.service"
+                          required
+                          service
+                          #service="ngModel">
+                      </div>
+                        </div>
+                        <div class="col-sm">
+
+                      <div class="form-group">
+                          <input type="text" name="departement" class="form-control" placeholder="Departement" [(ngModel)]="form.departement"
+                          required
+                          departement
+                          #departement="ngModel" >
+                     
+                      </div>
+                    </div>
+                      </div>
+                      <div class="row g-3">
+                        <div class="col-sm">
+                      <div class="form-group">
+                          <input type="text"  name ="telFixe" class="form-control" placeholder="Téléphone Fixe"[(ngModel)]="form.telFixe"
+                          required
+                          telFixe
+                          #telFixe="ngModel" >
+                      </div>
+                        </div>
+                        <div class="col-sm">
+                          <div class="form-group">
+                        
+                          <input type="text" name="telMobile" class="form-control" placeholder="Téléphone Mobile" [(ngModel)]="form.telMobile"
+                          required
+                          telMobile
+                          #telMobile="ngModel" >
+                        </div>
+                        </div>
+                      </div> -->
+                    
+                      <div class="form-group">
+                        <button class="btn btn-primary button1 btn-block form-submit" style="background-color: #4CAF50;">S'inscrire</button>
+                      </div>
+                      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                        Signup failed !<br />{{ errorMessage }}
+                      </div>
+                    </form>
+  <div class="alert alert-success" *ngIf="isSuccessful">
+    Registration successfully done !
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-10 ml-auto col-xl-6 mr-auto">
+  <div class="simplecard ">
+  <div class="nav-tabs-navigation" data-tabs-color="orange">
+    <div class="nav-tabs-wrapper">
+      <img class="contact-image " src="assets/img/signup-image.jpg" alt="">
+    </div>
+  </div>
+  </div>
+  <!-- End Tabs on plain Card -->
+  </div>
+   
+ 
+
+<!-- End Tabs on plain Card -->
+
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+

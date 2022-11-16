@@ -1,0 +1,190 @@
+
+                <div class="card">
+                    <div class="header">
+
+                      <h4 class="title"><span class="bi bi-telephone"></span> Gestion des salles de réunion</h4>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                     <!--  <p class="category">Gestion  des Salles de réunions</p> -->
+<!--                       <button  title="Ajouter une salle"
+                        class="btn btn-info btn-fill bi bi-plus"  (click)="onNewEstimation()" ></button> -->
+
+                    </div>
+
+                  <!--
+                    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid row">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="col align-self-end">
+                <a class="navbar-brand" href="#">Planning Poker</a>
+            </div>
+            <div class="col align-self-center align-item-navbar">
+                <ul class="navbar-nav">
+                    <li>
+                        <a class="nav-link" href="#plan"><i class="bi bi-joystick"> CRIAR SESSÃO</i></a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#entrarSessao" href=""><i class="bi bi-box-arrow-in-right"> ENTRAR SESSÃO</i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Página -->
+<div class="container ma-top">
+    <div class="row">
+        <div class="col">
+            <img class="img-background" src="../../assets/background.jpg" alt="Planejamento com planning poker">
+        </div>
+        <div class="col">
+            <form [formGroup]="formCriaSessao" (ngSubmit)="criarSessao()" class="form-detail">
+                <div class="mb-3">
+                  <p class="title-form">Commencer poker game</p>
+
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Nom salle</label>
+
+                    <input formControlName="nomeSala" type="text" class="form-control" placeholder="Nom salle" aria-label="nomSalle" name="nomSalle">
+                 
+                 <!--  <input formControlName="nomeSala" type="text" class="form-control input-borda"> -->
+                </div>
+                <div class="row g-4">
+                  <div class="col-sm">
+                    <label class="form-label">Système de vote</label>
+                    <mat-select class="form-control" formControlName="tipoCarta" name="suite" placeholder="Système de vote" aria-label="suite">
+                      <mat-option value="1">Fibonacci</mat-option>
+                      <mat-option value="2">Fibonacci curto </mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+<!--                 <div class="mb-3">
+                    <label class="form-label">System vote</label>
+                    <select class="form-select input-borda" formControlName="tipoCarta" required>
+                        <option value="1">Fibonacci</option>
+                        <option value="2">Fibonacci curto</option>
+                    </select>
+                </div> -->
+                <div class="row g-4">
+                  <div class="col-sm">
+                    <div class="form-check form-switch">
+                        <input formControlName="espectador" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Spectateur?</label>
+                    </div>
+                </div>
+                </div>
+                <button [disabled]="!formCriaSessao.valid" type="submit" class="btn btn-info btn-fill float-right">Play</button>
+                <!-- <button [disabled]="!formCriaSessao.valid" type="submit" class="btn btn-primary  button-border">Play</button> -->
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal entrar em sessão existente -->
+<div class="modal fade" id="entrarSessao" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Entrer salle <i class="bi bi-file-ppt"></i></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form [formGroup]="formEntrarSessao" (ngSubmit)="entrarSessao()">
+            <div class="modal-body">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">name</label>
+                  <input formControlName="nomeUsuario" type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">ID salle</label>
+                    <input formControlName="idSala" type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="mb-3">
+                    <div class="form-check form-switch">
+                        <input formControlName="espectador" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">spectateur?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary button-border" data-bs-dismiss="modal">join</button>
+                <button [disabled]="!formEntrarSessao.valid" type="submit" class="btn btn-primary button-border" data-bs-dismiss="modal">Entrar salle</button>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="col-md-6">
+    <h4>estimations List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let estimationn of estimationns; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(estimationn, i)"
+      >
+        {{ estimationn.userStory }}
+        <button  type="button" rel="tooltip" title="Supprimer" class="btn btn-info btn-simple btn-xs" (click)=" OnDeleteEstimation(estimationn.id)" >
+          <i class="bi bi-trash"></i>
+        </button>
+      </li>
+    
+    </ul>
+   
+   
+
+    <!-- <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+      Remove All
+    </button>-->
+  </div>
+  <!--<div class="col-md-6">
+    <div *ngIf="currentEstimation">
+      <h4>estimation</h4>
+      <div>
+        <label><strong>user story:</strong></label> {{ currentTutorial.title }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentTutorial.description }}
+      </div>
+      <div>
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </div>
+
+      <a class="badge badge-warning" routerLink="/tutorials/{{ currentTutorial.id }}">
+        Edit
+      </a>
+    </div>
+  
+    <div *ngIf="!currentTutorial">
+      <br />
+      <p>Please click on a Tutorial...</p>
+    </div>
+  </div>-->
+</div>
+<br>
+<br>
+<br>
+<br>
+
+          
+
+
